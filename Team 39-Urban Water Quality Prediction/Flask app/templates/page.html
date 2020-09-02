@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>WATER QUALITY</title>
+     <link href='https://https://miro.medium.com/max/1000/1*rSy2sTO_g0WRbE2BLECiQA.png' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <style>
+       .login{
+          top:10%;
+        }
+    </style>
+</head>
+
+<body>
+   <h> <h1>WATER QUALITY PREDICTION</h1>
+    <div class="login">
+
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('y_pred')}}" method="post">
+            <label for="year">Year</label>  
+            <input type="text" name="year" placeholder="Enter year " id="year" required="required" />
+
+            <label for="do">Do</label>
+            <input type="text" name="do" placeholder="Enter do value" id="do" required="required" />
+
+            <label for="ph">Ph</label>
+            <input type="text" name="ph" placeholder="Enter ph value" id="ph" required="required" />
+
+            <label for="co">Co</label>
+            <input type="text" name="co" placeholder="Enter co value" id="co" required="required" />
+
+            <label for="bod">Bod</label>
+            <input type="text" name="bod" placeholder="Enter bod value" id="bod" required="required" min="0" max="5" />
+
+            <label for="na">Na</label>
+            <input type="text" name="na" placeholder="Enter na value" id="na" required="required" />
+
+            <label for="tc">Tc</label>
+            <input type="text" name="tc" placeholder=" Enter tc value" id="tc" required="required" /></h>
+
+            <button type="reset" class="btn btn-primary  btn-large">Clear</button>
+            <button type="submit" class="btn btn-primary  btn-large">Predict</button>
+
+            <br>
+            </br>Water Quality Prediction is : {{ prediction_text }}
+        </form>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
